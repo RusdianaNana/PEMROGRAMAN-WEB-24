@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;900&display=swap');
+
+:root {
+  --accentA:#1e90ff;
+  --accentB:#ff3b3b;
+  --textGlow:#e0f2fe;
+}
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
+
+body {
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(120deg,var(--accentA),var(--accentB));
+  animation:bgMove 8s infinite alternate;
+  color:#f1f5f9;
+  min-height:100vh;
+}
+
+@keyframes bgMove {
+  0% {background:linear-gradient(120deg,var(--accentA),var(--accentB));}
+  100% {background:linear-gradient(120deg,var(--accentB),var(--accentA));}
+}
+
+/* HEADER */
+header {
+  position:fixed;top:0;left:0;width:100%;
+  background:linear-gradient(90deg,var(--accentA),var(--accentB));
+  animation:bgMove 10s infinite alternate;
+  padding:16px 28px;
+  display:flex;justify-content:space-between;align-items:center;
+  z-index:1000;
+  box-shadow:0 4px 20px rgba(0,0,0,0.4);
+}
+header h1 {
+  font-size:22px;font-weight:800;color:white;
+  text-shadow:0 0 8px var(--textGlow),2px 2px 6px rgba(0,0,0,0.6);
+}
+nav a {
+  color:white;text-decoration:none;margin-left:20px;
+  font-weight:700;font-size:15px;
+  transition:0.3s;
+  text-shadow:0 0 6px var(--textGlow);
+}
+nav a:hover {color:#facc15;transform:scale(1.1)}
+
+.container {max-width:1000px;margin:auto;padding:120px 20px 40px}
+
+section {
+  margin-bottom:100px;
+  transform-style:preserve-3d;
+  animation:fadeIn 1s ease forwards;
+}
+@keyframes fadeIn {
+  from{opacity:0;transform:translateY(60px) rotateX(-20deg)}
+  to{opacity:1;transform:translateY(0) rotateX(0)}
+}
+
+/* Kartu umum */
+.card {
+  background:rgba(255,255,255,0.06);
+  padding:20px;border-radius:16px;
+  border:1px solid rgba(255,255,255,0.15);
+  box-shadow:0 8px 24px rgba(0,0,0,0.5);
+  display:flex;align-items:center;gap:16px;
+  transform:rotateY(-5deg);
+  transition:0.4s;
+}
+.card:hover {transform:scale(1.05) rotateY(0)}
+.card img {
+  width:150px;   
+  height:150px;
+  object-fit:cover;
+  border-radius:14px;
+  border:3px solid rgba(255,255,255,0.3);
+  box-shadow:0 4px 12px rgba(0,0,0,0.6);
+}
+.card strong {
+  font-size:19px;font-weight:800;
+  text-shadow:0 0 10px var(--textGlow),2px 2px 6px rgba(0,0,0,0.6);
+}
+.card .muted {
+  font-size:14px;color:rgba(240,249,255,0.9);
+  text-shadow:1px 1px 4px rgba(0,0,0,0.5);
+}
+
+/* Profile khusus */
+.profile-card {
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.15);
+  padding:24px;border-radius:20px;
+  display:flex;gap:24px;align-items:center;
+  box-shadow:0 10px 30px rgba(0,0,0,0.5);
+  transform:rotateY(5deg);
+  transition:0.4s;
+}
+.profile-card:hover {transform:scale(1.03) rotateY(0)}
+.profile-card img {
+  width:160px;height:160px;  
+  border-radius:50%;
+  object-fit:cover;
+  border:4px solid rgba(255,255,255,0.3);
+}
+.profile-info h2 {
+  font-size:28px;font-weight:900;
+  text-shadow:0 0 12px var(--textGlow),2px 2px 8px rgba(0,0,0,0.6);
+}
+.profile-info span {
+  font-size:16px;color:#ddd;
+}
+
+/* Judul section */
+h2 {
+  font-size:26px;font-weight:900;margin-bottom:24px;
+  text-align:center;
+  text-shadow:0 0 14px white,0 0 24px var(--accentA),0 0 30px var(--accentB);
+}
+
+/* CV khusus */
+.cv-card {
+  text-align:center;
+}
+.cv-card img {
+  max-width:25%;   
+  border-radius:60px;
+  box-shadow:0 6px 10px rgba(0,0,0,0.12);
+}
+
+.timeline {
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+.contact-card {
+  text-align:center;
+}
