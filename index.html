@@ -1,147 +1,22 @@
 <!doctype html>
 <html lang="id">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Profil Rusdiana (Nana)</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;900&display=swap');
-
-    :root {
-      --accentA:#1e90ff;
-      --accentB:#ff3b3b;
-      --textGlow:#e0f2fe;
-    }
-    *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
-    body {
-      font-family:'Poppins',sans-serif;
-      background:linear-gradient(-45deg,#1e90ff,#ff3b3b,#1e90ff,#ff3b3b);
-      background-size:400% 400%;
-      animation:gradientShift 10s ease infinite;
-      color:#f1f5f9;
-      min-height:100vh;
-    }
-
-    @keyframes gradientShift {
-      0% {background-position:0% 50%}
-      50% {background-position:100% 50%}
-      100% {background-position:0% 50%}
-    }
-
-    /* HEADER */
-    header {
-      position:fixed;
-      top:0;left:0;width:100%;
-      background:linear-gradient(90deg,var(--accentA),var(--accentB));
-      padding:16px 28px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      z-index:1000;
-      box-shadow:0 4px 20px rgba(0,0,0,0.4);
-    }
-    header h1 {
-      font-size:22px;font-weight:800;color:white;
-      text-shadow:0 0 8px var(--textGlow),2px 2px 6px rgba(0,0,0,0.6);
-      letter-spacing:1px;
-    }
-    nav a {
-      color:white;text-decoration:none;margin-left:24px;
-      font-weight:700;font-size:15px;
-      cursor:pointer;transition:0.3s;
-      text-shadow:0 0 6px var(--textGlow);
-    }
-    nav a:hover {color:#facc15;transform:scale(1.1)}
-
-    /* CONTAINER */
-    .container {max-width:1000px;margin:auto;padding:120px 20px 40px}
-
-    section {
-      margin-bottom:80px;
-      transform-style:preserve-3d;
-      animation:fadeIn 1s ease forwards;
-    }
-    @keyframes fadeIn {
-      from{opacity:0;transform:translateY(60px) rotateX(-20deg)}
-      to{opacity:1;transform:translateY(0) rotateX(0)}
-    }
-
-    /* CARD GLOBAL */
-    .card {
-      background:rgba(255,255,255,0.05);
-      border:1px solid rgba(255,255,255,0.15);
-      padding:24px;border-radius:20px;
-      box-shadow:0 10px 30px rgba(0,0,0,0.5);
-      transition:transform 0.2s;
-      transform-style:preserve-3d;
-    }
-    .card:hover {transform:rotateY(10deg) rotateX(10deg) scale(1.05)}
-
-    /* PROFILE */
-    .profile-card {
-      display:flex;gap:24px;align-items:center;
-    }
-    .profile-card img {
-      width:160px;height:160px;border-radius:50%;
-      object-fit:cover;
-      border:4px solid rgba(255,255,255,0.3);
-      box-shadow:0 6px 20px rgba(0,0,0,0.6);
-    }
-    .profile-info h2 {
-      font-size:28px;font-weight:900;
-      text-shadow:0 0 12px var(--textGlow),2px 2px 8px rgba(0,0,0,0.6);
-    }
-    .muted {
-      color:rgba(240,249,255,0.9);
-      font-size:15px;
-      margin-top:4px;
-      text-shadow:1px 1px 4px rgba(0,0,0,0.5);
-    }
-
-    /* TITLE */
-    h2 {
-      font-size:26px;
-      font-weight:900;
-      margin-bottom:24px;
-      text-align:center;
-      text-shadow:0 0 14px white,0 0 24px var(--accentA),0 0 30px var(--accentB);
-    }
-
-    /* TIMELINE */
-    .timeline {display:flex;flex-direction:column;gap:20px}
-    .item {
-      display:flex;align-items:center;gap:16px;
-    }
-    .item img {
-      width:90px;height:90px;object-fit:cover;
-      border-radius:14px;
-      border:3px solid rgba(255,255,255,0.3);
-      box-shadow:0 4px 12px rgba(0,0,0,0.6);
-    }
-    .item strong {
-      font-size:19px;font-weight:800;
-      text-shadow:0 0 10px var(--textGlow),2px 2px 6px rgba(0,0,0,0.6);
-    }
-
-    /* CONTACT + CV */
-    .contact-info div, .cv-display div {
-      font-size:16px;margin:6px 0;
-      text-shadow:0 0 6px rgba(255,255,255,0.7);
-    }
-    .cv-display img {
-      max-width:100%;border-radius:20px;
-      border:4px solid rgba(255,255,255,0.3);
-      box-shadow:0 10px 25px rgba(0,0,0,0.7);
-    }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Profil Rusdiana</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
 </head>
 <body>
+  <!-- HEADER -->
   <header>
     <h1>Profil Rusdiana</h1>
     <nav>
       <a href="#profil">Profil</a>
       <a href="#pendidikan">Pendidikan</a>
       <a href="#pekerjaan">Pekerjaan</a>
+      <a href="#organisasi">Organisasi</a>
+      <a href="#hobi">Hobi</a>
       <a href="#hubungi">Hubungi</a>
       <a href="#cv">CV</a>
     </nav>
@@ -150,14 +25,15 @@
   <div class="container">
     <!-- PROFIL -->
     <section id="profil">
-      <div class="card profile-card">
-        <img src="Rusdiana.jpg" alt="Foto Nana">
+      <div class="profile-card">
+        <img src="foto/Rusdiana.jpg" alt="Foto Rusdiana">
         <div class="profile-info">
-          <h2>Rusdiana <span style="font-size:16px;color:#ddd">(Nana)</span></h2>
+          <h2>Rusdiana <span>(Nana)</span></h2>
           <div class="muted">📍 Muara Jawa, 30 Desember 2005</div>
           <div class="muted">🏠 Jl. Pangeran Suryanata Gg Langgar At Taufik No 117</div>
-          <div class="muted">📞 083153549314 • 📧 rusdiana30122005@gmail.com</div>
-          <div class="muted">🎓 Universitas Mulawarman, Teknik Informatika</div>
+          <div class="muted">📞 083153549314</div>
+          <div class="muted">📧 rusdiana30122005@gmail.com</div>
+          <div class="muted">🎓 Universitas Mulawarman, Fakultas Teknik, Informatika</div>
           <div class="muted">🆔 NIM: 2409106021</div>
         </div>
       </div>
@@ -167,25 +43,10 @@
     <section id="pendidikan">
       <h2>Riwayat Pendidikan</h2>
       <div class="timeline">
-        <div class="card item">
-          <img src="SD.jpg" alt="SD 014 Muara Jawa">
-          <div><strong>SD 014 Muara Jawa</strong></div>
-        </div>
-        <div class="card item">
-          <img src="SMP.jpg" alt="SMPN 1 Muara Jawa">
-          <div><strong>SMPN 1 Muara Jawa</strong></div>
-        </div>
-        <div class="card item">
-          <img src="SMA.jpg" alt="SMAN 1 Muara Jawa">
-          <div><strong>SMAN 1 Muara Jawa</strong></div>
-        </div>
-        <div class="card item">
-          <img src="UNMUL.jpg" alt="Universitas Mulawarman">
-          <div>
-            <strong>Universitas Mulawarman — Informatika</strong><br>
-            <span class="muted">NIM 2409106021</span>
-          </div>
-        </div>
+        <div class="card"><img src="foto/SD.jpg"><div><strong>SD 014 Muara Jawa</strong></div></div>
+        <div class="card"><img src="foto/SMP.jpg"><div><strong>SMPN 1 Muara Jawa</strong></div></div>
+        <div class="card"><img src="foto/SMA.jpg"><div><strong>SMAN 1 Muara Jawa</strong></div></div>
+        <div class="card"><img src="foto/UNMUL.jpg"><div><strong>Universitas Mulawarman — Informatika</strong></div></div>
       </div>
     </section>
 
@@ -193,39 +54,46 @@
     <section id="pekerjaan">
       <h2>Pekerjaan</h2>
       <div class="timeline">
-        <div class="card item">
-          <img src="ABA.jpg" alt="Freelance">
-          <div>
-            <strong>Freelance Pengajar</strong>
-            <div class="muted">Mengajar anak terapan secara privat dan kelas kecil.</div>
-          </div>
-        </div>
-        <div class="card item">
-          <img src="MS.HONY.jpg" alt="Asisten Guru">
-          <div>
-            <strong>Asisten Guru</strong>
-            <div class="muted">Membantu kegiatan belajar dalam pembuatan soal, khususnya bidang SD.</div>
-          </div>
-        </div>
+        <div class="card"><img src="foto/ABA.jpg"><div><strong>Freelance Pengajar</strong><div class="muted">Mengajar materi privat dan kelas kecil</div></div></div>
+        <div class="card"><img src="foto/MS.HONY.jpg"><div><strong>Asisten Guru</strong><div class="muted">Membantu kegiatan belajar & pembuatan soal SD</div></div></div>
+      </div>
+    </section>
+
+    <!-- ORGANISASI -->
+    <section id="organisasi">
+      <h2>Organisasi</h2>
+      <div class="timeline">
+        <div class="card"><img src="foto/PERMIKOMNAS.jpg"><div><strong>PERMIKOMNAS</strong></div></div>
+        <div class="card"><img src="foto/BEM FT.jpg"><div><strong>BEM FT Universitas Mulawarman</strong></div></div>
+        <div class="card"><img src="foto/AI.jpg"><div><strong>Program Studi Informatika Universitas Mulawarman memiliki himpunan mahasiswa yang bernama Association of Informatics (AI).</strong></div></div>
+      </div>
+    </section>
+
+    <!-- HOBI -->
+    <section id="hobi">
+      <h2>Hobi</h2>
+      <div class="timeline">
+        <div class="card"><img src="foto/FG.jpg"><div><strong>Futsal</strong></div></div>
+        <div class="card"><img src="foto/FC BARCELONA.jpg"><div><strong>Sepak Bola</strong></div></div>
       </div>
     </section>
 
     <!-- HUBUNGI -->
     <section id="hubungi">
       <h2>Hubungi Saya</h2>
-      <div class="card contact-info">
-        <div>📞 083153549314</div>
-        <div>📧 rusdiana30122005@gmail.com</div>
-        <div>📸 Instagram: @Rusdianaa694</div>
-        <div>📘 Facebook: Rusdiana Nana</div>
+      <div class="contact">
+        <p>📞 083153549314</p>
+        <p>📷 Instagram: <a href="https://instagram.com/Rusdianaa694" target="_blank">@Rusdianaa694</a></p>
+        <p>📧 Email: rusdiana30122005@gmail.com</p>
+        <p>📘 Facebook: <a href="https://facebook.com" target="_blank">Rusdiana Nana</a></p>
       </div>
     </section>
 
     <!-- CV -->
     <section id="cv">
       <h2>Curriculum Vitae</h2>
-      <div class="card cv-display">
-        <img src="CV RUSDIANA.jpg" alt="CV Rusdiana">
+      <div class="cv">
+        <img src="foto/CV Rusdiana.jpg" alt="CV Rusdiana">
       </div>
     </section>
   </div>
